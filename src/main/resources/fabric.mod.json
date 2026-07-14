@@ -1,36 +1,27 @@
 {
   "schemaVersion": 1,
-  "id": "carpet-extension",
-  "version": "1.4.6",
-
-  "name": "Example Carpet Extension Mod",
-  "description": "This is an example description! Tell everyone what your mod is about!",
-  "authors": [
-    "Me!"
-  ],
+  "id": "lux-carpet-tweaks",
+  "version": "${version}",
+  "name": "Lux's Carpet Tweaks",
+  "description": "Semi-vanilla tweaks: ice water drops, old witch loot, snow fixes",
+  "authors": ["luxwzzy"],
   "contact": {
-    "homepage": "https://web.me/",
-    "sources": "https://github.com/gnembon/fabric-carpet-extension-example-mod"
+    "homepage": "https://github.com/luxwzzy/lux-carpet-tweaks"
   },
-
-  "license": "CC0-1.0",
-  "icon": "assets/modid/icon.png",
-
+  "license": "MIT",
+  
   "environment": "*",
   "entrypoints": {
     "main": [
+      "com.luxwzzy.luxcarpettweaks.LuxCarpetTweaksExtension"
     ]
   },
   "mixins": [
-    "modid.mixins.json"
+    "lux-carpet-tweaks.mixins.json"
   ],
-
   "depends": {
-    "minecraft": "1.16.x",
-    "fabricloader": ">=0.4.0",
-    "carpet": "*"
-  },
-  "suggests": {
-    "flamingo": "*"
+    "fabricloader": ">=0.15.0",
+    "minecraft": "~1.21",
+    "carpet": ">=1.4.147"
   }
 }

@@ -1,0 +1,6 @@
+{
+  "lux-carpet-tweaks.rule.ancientBartering.desc": "1-in-N chance for piglins to drop ancient debris when bartering. 0 disables.",
+  "lux-carpet-tweaks.rule.oldWitchDrops.desc": "Restores witch drops to pre-1.21 behavior (0-2 redstone instead of guaranteed 4-8).",
+  "lux-carpet-tweaks.rule.snowUnderTrees.desc": "Fixes snow not generating under trees (MC-119599).",
+  "lux-carpet-tweaks.rule.waterInIceExplosion.desc": "Ice blocks destroyed by explosions are replaced with water."
+}
