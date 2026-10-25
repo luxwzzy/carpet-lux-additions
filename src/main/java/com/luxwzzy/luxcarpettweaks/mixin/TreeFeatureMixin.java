@@ -1,13 +1,13 @@
 package com.luxwzzy.luxcarpettweaks.mixin;
 
 import com.luxwzzy.luxcarpettweaks.LuxCarpetTweaksRules;
-import net.minecraft.block.Blocks;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.random.Random;
-import net.minecraft.world.StructureWorldAccess;
-import net.minecraft.world.gen.feature.TreeFeature;
-import net.minecraft.world.gen.feature.TreeFeatureConfig;
-import net.minecraft.world.gen.feature.util.FeatureContext;
+import net.minecraft.core.BlockPos;
+import net.minecraft.util.RandomSource;
+import net.minecraft.world.level.WorldGenLevel;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
+import net.minecraft.world.level.levelgen.feature.TreeFeature;
+import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -20,16 +20,16 @@ import java.util.Set;
 public class TreeFeatureMixin {
 
     @Inject(
-        method = "generate(Lnet/minecraft/world/gen/feature/util/FeatureContext;)Z",
-        locals = LocalCapture.CAPTURE_FAILHARD,
-        at = @At(value = "INVOKE", target = "Lnet/minecraft/util/math/BlockBox;encompassPositions(Ljava/lang/Iterable;)Ljava/util/Optional;", shift = At.Shift.BEFORE)
+            method = "place(Lnet/minecraft/world/level/levelgen/feature/FeaturePlaceContext;)Z",
+            locals = LocalCapture.CAPTURE_FAILHARD,
+            at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/levelgen/structure/BoundingBox;encapsulatingPositions(Ljava/lang/Iterable;)Ljava/util/Optional;", shift = At.Shift.BEFORE)
     )
-    private void snowOnLeaves(FeatureContext<TreeFeatureConfig> context, CallbackInfoReturnable<Boolean> cir, StructureWorldAccess world, Random random, BlockPos blockPos, TreeFeatureConfig treeFeatureConfig, Set<BlockPos> set, Set<BlockPos> set2, Set<BlockPos> set3, Set<BlockPos> set4) {
+    private void snowOnLeaves(FeaturePlaceContext<TreeConfiguration> context, CallbackInfoReturnable<Boolean> cir, WorldGenLevel level, RandomSource random, BlockPos blockPos, TreeConfiguration treeConfiguration, Set<BlockPos> set, Set<BlockPos> set2, Set<BlockPos> set3, Set<BlockPos> set4) {
         if (!LuxCarpetTweaksRules.snowUnderTrees) return;
         for (BlockPos leafPos : set3) {
-            BlockPos snowPos = leafPos.up();
-            if (world.isAir(snowPos) && world.getBiome(snowPos).value().canSetSnow(world, snowPos)) {
-                world.setBlockState(snowPos, Blocks.SNOW.getDefaultState(), 19);
+            BlockPos snowPos = leafPos.above();
+            if (level.isEmptyBlock(snowPos) && level.getBiome(snowPos).value().shouldSnow(level, snowPos)) {
+                level.setBlock(snowPos, Blocks.SNOW.defaultBlockState(), 19);
             }
         }
     }
