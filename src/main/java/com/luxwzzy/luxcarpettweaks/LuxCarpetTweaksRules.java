@@ -26,4 +26,9 @@ public class LuxCarpetTweaksRules {
         categories = RuleCategory.SURVIVAL
     )
     public static boolean waterInIceExplosion = false;
+
+    @Rule(
+            categories = RuleCategory.SURVIVAL
+    )
+    public static boolean unbreakableTools = false;
 }

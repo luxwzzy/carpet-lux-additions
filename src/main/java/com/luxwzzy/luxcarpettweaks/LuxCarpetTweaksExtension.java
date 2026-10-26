@@ -32,6 +32,10 @@ public class LuxCarpetTweaksExtension implements CarpetExtension, ModInitializer
             "lux-carpet-tweaks.rule.waterInIceExplosion.desc",
             "Ice blocks destroyed by explosions are replaced with water."
         );
+        carpet.utils.Translations.registerFallbackTranslation(
+                "lux-carpet-tweaks.rule.unbreakableTools.desc",
+                "Tools and armor stay at 1 durability instead of breaking."
+        );
         SETTINGS.parseSettingsClass(LuxCarpetTweaksRules.class);
     }
 
