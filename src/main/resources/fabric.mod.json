@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "id": "lux-carpet-tweaks",
+  "id": "carpet-lux-addition",
   "version": "${version}",
-  "name": "Lux's Carpet Tweaks",
-  "description": "Semi-vanilla tweaks: ice water drops, old witch loot, snow fixes",
+  "name": "Carpet lux Additions",
+  "description": "Some vanilla-ish tweaks :3",
   "authors": ["luxwzzy"],
   "contact": {
     "homepage": "https://github.com/luxwzzy/lux-carpet-tweaks"
