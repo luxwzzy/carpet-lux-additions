@@ -10,7 +10,8 @@
       "IceBlockMixin",
       "ItemStackMixin",
       "ItemMixin",
-      "EnchantmentHelperMixin"
+      "EnchantmentHelperMixin",
+      "LivingEntityMixin"
   ],
   "injectors": {
     "defaultRequire": 1

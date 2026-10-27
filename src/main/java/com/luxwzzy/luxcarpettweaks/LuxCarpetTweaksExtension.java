@@ -36,6 +36,10 @@ public class LuxCarpetTweaksExtension implements CarpetExtension, ModInitializer
                 "lux-carpet-tweaks.rule.unbreakableTools.desc",
                 "Tools and armor stay at 1 durability instead of breaking."
         );
+        carpet.utils.Translations.registerFallbackTranslation(
+                "lux-carpet-tweaks.rule.aggroPiglinXpDrop.desc",
+                "Angry zombified piglins always drop XP when killed, regardless of cause of death."
+        );
         SETTINGS.parseSettingsClass(LuxCarpetTweaksRules.class);
     }
 

@@ -31,4 +31,8 @@ public class LuxCarpetTweaksRules {
             categories = RuleCategory.SURVIVAL
     )
     public static boolean unbreakableTools = false;
+    @Rule(
+            categories = RuleCategory.SURVIVAL
+    )
+    public static boolean aggroPiglinXpDrop = false;
 }
