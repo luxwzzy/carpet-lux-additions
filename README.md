@@ -10,7 +10,7 @@ vanilla ish additions for minecraft :3 mainly made just for my weird needs uwu
 Restores pre 1.21 witch drops
 
 ### Snow under trees
-Fixed snow not generating under trees and buggy generation above them (MC-119599)
+Fixes snow not generating under trees and buggy generation above them (MC-119599)
 
 ### Water in ice explosion
 Makes water generate when ice explodes
