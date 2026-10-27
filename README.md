@@ -1,16 +1,22 @@
-# Fabric Example Mod
+# Carpet Lux Addition
 
-## Setup
+vanilla ish additions for minecraft :3 mainly made just for my weird needs uwu
 
-1. Edit build.gradle and mod.json to suit your needs.
-    * The "mixins" object can be removed from mod.json if you do not need to use mixins.
-    * Please replace all occurences of "modid" with your own mod ID - sometimes, a different string may also suffice.
-2. Run the following command:
+## Rules
+### Ancient Bartering
+1 in N chance of bartering dropping ancient debris
 
-```
-./gradlew idea
-```
+### Old Witch Drops
+Restores pre 1.21 witch drops
 
-## License
+### Snow under trees
+Fixed snow not generating under trees and buggy generation above them (MC-119599)
 
-This template is available under the CC0 license. Feel free to learn from it and incorporate it in your own projects.
+### Water in ice explosion
+Makes water generate when ice explodes
+
+### Unbreakable Tools
+Armor and tools behave like the elytra when reaching 1 durability instead of breakiing
+
+### Aggro Piglins XP Drop
+Makes zombified piglins drop XP if they die while angry regardless of the cause of death (restoring pre 1.21.5 behavior)
