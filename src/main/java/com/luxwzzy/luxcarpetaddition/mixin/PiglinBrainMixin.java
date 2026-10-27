@@ -1,6 +1,6 @@
-package com.luxwzzy.luxcarpettweaks.mixin;
+package com.luxwzzy.luxcarpetaddition.mixin;
 
-import com.luxwzzy.luxcarpettweaks.LuxCarpetTweaksRules;
+import com.luxwzzy.luxcarpetaddition.LuxCarpetAdditionRules;
 import net.minecraft.world.entity.monster.piglin.Piglin;
 import net.minecraft.world.entity.monster.piglin.PiglinAi;
 import net.minecraft.world.item.ItemStack;
@@ -18,8 +18,8 @@ public class PiglinBrainMixin {
 
     @Inject(method = "getBarterResponseItems", at = @At("RETURN"), cancellable = true)
     private static void ancientBartering(Piglin piglin, CallbackInfoReturnable<List<ItemStack>> cir) {
-        if (LuxCarpetTweaksRules.ancientBartering == 0) return;
-        if (piglin.getRandom().nextInt(LuxCarpetTweaksRules.ancientBartering) == 0) {
+        if (LuxCarpetAdditionRules.ancientBartering == 0) return;
+        if (piglin.getRandom().nextInt(LuxCarpetAdditionRules.ancientBartering) == 0) {
             List<ItemStack> items = new ArrayList<>(cir.getReturnValue());
             items.add(new ItemStack(Items.ANCIENT_DEBRIS));
             cir.setReturnValue(items);

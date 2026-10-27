@@ -13,11 +13,11 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "com.luxwzzy.luxcarpettweaks.LuxCarpetTweaksExtension"
+      "com.luxwzzy.luxcarpetaddition.LuxCarpetAdditionExtension"
     ]
   },
   "mixins": [
-    "lux-carpet-tweaks.mixins.json"
+    "lux-carpet-addition.mixins.json"
   ],
   "depends": {
     "fabricloader": ">=0.19.5",

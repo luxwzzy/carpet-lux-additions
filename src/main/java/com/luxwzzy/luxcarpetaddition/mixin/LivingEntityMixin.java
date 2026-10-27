@@ -1,6 +1,6 @@
-package com.luxwzzy.luxcarpettweaks.mixin;
+package com.luxwzzy.luxcarpetaddition.mixin;
 
-import com.luxwzzy.luxcarpettweaks.LuxCarpetTweaksRules;
+import com.luxwzzy.luxcarpetaddition.LuxCarpetAdditionRules;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.monster.zombie.ZombifiedPiglin;
 import org.spongepowered.asm.mixin.Mixin;
@@ -13,7 +13,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public class LivingEntityMixin {
     @Inject(method = "isAlwaysExperienceDropper", at = @At("HEAD"), cancellable = true)
     private void angryZombifiedPiglinsDropXp(CallbackInfoReturnable<Boolean> cir) {
-        if (!LuxCarpetTweaksRules.aggroPiglinXpDrop) return;
+        if (!LuxCarpetAdditionRules.aggroPiglinXpDrop) return;
         if ((Object) this instanceof ZombifiedPiglin piglin) {
             if (((NeutralMob) piglin).isAngry() && !piglin.isBaby()) {
                 cir.setReturnValue(true);

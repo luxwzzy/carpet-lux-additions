@@ -1,9 +1,9 @@
-package com.luxwzzy.luxcarpettweaks;
+package com.luxwzzy.luxcarpetaddition;
 
 import carpet.api.settings.Rule;
 import carpet.api.settings.RuleCategory;
 
-public class LuxCarpetTweaksRules {
+public class LuxCarpetAdditionRules {
 
     @Rule(
         categories = RuleCategory.SURVIVAL,

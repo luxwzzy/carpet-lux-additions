@@ -1,6 +1,6 @@
-package com.luxwzzy.luxcarpettweaks.mixin;
+package com.luxwzzy.luxcarpetaddition.mixin;
 
-import com.luxwzzy.luxcarpettweaks.LuxCarpetTweaksRules;
+import com.luxwzzy.luxcarpetaddition.LuxCarpetAdditionRules;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.WorldGenLevel;
@@ -25,7 +25,7 @@ public class TreeFeatureMixin {
             at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/levelgen/structure/BoundingBox;encapsulatingPositions(Ljava/lang/Iterable;)Ljava/util/Optional;", shift = At.Shift.BEFORE)
     )
     private void snowOnLeaves(FeaturePlaceContext<TreeConfiguration> context, CallbackInfoReturnable<Boolean> cir, WorldGenLevel level, RandomSource random, BlockPos blockPos, TreeConfiguration treeConfiguration, Set<BlockPos> set, Set<BlockPos> set2, Set<BlockPos> set3, Set<BlockPos> set4) {
-        if (!LuxCarpetTweaksRules.snowUnderTrees) return;
+        if (!LuxCarpetAdditionRules.snowUnderTrees) return;
         for (BlockPos leafPos : set3) {
             BlockPos snowPos = leafPos.above();
             if (level.isEmptyBlock(snowPos) && level.getBiome(snowPos).value().shouldSnow(level, snowPos)) {

@@ -1,6 +1,6 @@
-package com.luxwzzy.luxcarpettweaks.mixin;
+package com.luxwzzy.luxcarpetaddition.mixin;
 
-import com.luxwzzy.luxcarpettweaks.LuxCarpetTweaksRules;
+import com.luxwzzy.luxcarpetaddition.LuxCarpetAdditionRules;
 import net.minecraft.core.Holder;
 import net.minecraft.world.item.ItemInstance;
 import net.minecraft.world.item.enchantment.Enchantment;
@@ -15,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public class EnchantmentHelperMixin {
     @Inject(method = "getItemEnchantmentLevel", at = @At("HEAD"), cancellable = true)
     private static void disableBrokenItemEnchantments(Holder<Enchantment> enchantment, ItemInstance piece, CallbackInfoReturnable<Integer> cir) {
-        if (!LuxCarpetTweaksRules.unbreakableTools) return;
+        if (!LuxCarpetAdditionRules.unbreakableTools) return;
 
         // Convertimos la interfaz a ItemStack para leer la durabilidad
         ItemStack stack = (ItemStack) piece;

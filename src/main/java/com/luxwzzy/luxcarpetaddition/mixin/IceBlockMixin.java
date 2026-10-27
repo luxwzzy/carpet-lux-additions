@@ -1,9 +1,8 @@
-package com.luxwzzy.luxcarpettweaks.mixin;
+package com.luxwzzy.luxcarpetaddition.mixin;
 
-import com.luxwzzy.luxcarpettweaks.LuxCarpetTweaksRules;
+import com.luxwzzy.luxcarpetaddition.LuxCarpetAdditionRules;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -19,7 +18,7 @@ public class IceBlockMixin {
 
     @Inject(method = "wasExploded", at = @At("HEAD"))
     private void waterInIceExplosion(ServerLevel level, BlockPos pos, Explosion explosion, CallbackInfo ci) {
-        if (!LuxCarpetTweaksRules.waterInIceExplosion) return;
+        if (!LuxCarpetAdditionRules.waterInIceExplosion) return;
         if (!((Object)this instanceof IceBlock)) return;
         if (level.dimension() == Level.NETHER) return;
         level.setBlock(pos, Blocks.WATER.defaultBlockState(), 3);

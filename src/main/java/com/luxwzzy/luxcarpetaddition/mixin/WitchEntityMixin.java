@@ -1,6 +1,6 @@
-package com.luxwzzy.luxcarpettweaks.mixin;
+package com.luxwzzy.luxcarpetaddition.mixin;
 
-import com.luxwzzy.luxcarpettweaks.LuxCarpetTweaksRules;
+import com.luxwzzy.luxcarpetaddition.LuxCarpetAdditionRules;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.LivingEntity;
@@ -17,7 +17,7 @@ public class WitchEntityMixin {
 
     @Inject(method = "dropFromLootTable", at = @At("HEAD"), cancellable = true)
     private void oldWitchDrops(ServerLevel level, DamageSource damageSource, boolean hitByPlayer, CallbackInfo ci) {
-        if (!LuxCarpetTweaksRules.oldWitchDrops) return;
+        if (!LuxCarpetAdditionRules.oldWitchDrops) return;
         if (!((Object)this instanceof Witch self)) return;
 
         int rolls = 1 + level.getRandom().nextInt(3);

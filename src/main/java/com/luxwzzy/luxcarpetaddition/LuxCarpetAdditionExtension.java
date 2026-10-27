@@ -1,11 +1,11 @@
-package com.luxwzzy.luxcarpettweaks;
+package com.luxwzzy.luxcarpetaddition;
 
 import carpet.CarpetExtension;
 import carpet.CarpetServer;
 import net.fabricmc.api.ModInitializer;
 import java.util.Map;
 
-public class LuxCarpetTweaksExtension implements CarpetExtension, ModInitializer {
+public class LuxCarpetAdditionExtension implements CarpetExtension, ModInitializer {
 
     @Override
     public void onInitialize() {
@@ -14,7 +14,7 @@ public class LuxCarpetTweaksExtension implements CarpetExtension, ModInitializer
 
     @Override
     public void onGameStarted() {
-        CarpetServer.settingsManager.parseSettingsClass(LuxCarpetTweaksRules.class);
+        CarpetServer.settingsManager.parseSettingsClass(LuxCarpetAdditionRules.class);
     }
 
     @Override
