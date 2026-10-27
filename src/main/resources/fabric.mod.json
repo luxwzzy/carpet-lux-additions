@@ -3,6 +3,7 @@
   "id": "carpet-lux-addition",
   "version": "${version}",
   "name": "Carpet lux Addition",
+  "icon": "assets/lux-carpet-addition/icon.png",
   "description": "Some vanilla-ish tweaks :3",
   "authors": ["luxwzzy"],
   "contact": {

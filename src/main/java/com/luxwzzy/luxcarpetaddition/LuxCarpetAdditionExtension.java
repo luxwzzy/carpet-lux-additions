@@ -19,7 +19,7 @@ public class LuxCarpetAdditionExtension implements CarpetExtension, ModInitializ
 
     @Override
     public Map<String, String> canHasTranslations(String lang) {
-        return carpet.utils.Translations.getTranslationFromResourcePath("assets/carpet-lux-addition/lang/" + lang + ".json");
+        return carpet.utils.Translations.getTranslationFromResourcePath("assets/lux-carpet-addition/lang/" + lang + ".json");
     }
 
     @Override
